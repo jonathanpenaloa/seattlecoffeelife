@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service';
 
+import './NavBar.css';
+
 export default function NavBar(props) {
 
   function handleLogOut() {
@@ -10,8 +12,8 @@ export default function NavBar(props) {
   }
 
   return (
-    <nav>
-      <Link to="/orders">Order History</Link>
+    <nav className="topnav">
+      <Link to="/CoffeeDrinks">Drik Menu</Link>
       &nbsp; | &nbsp;
       <Link to="/orders/new">New Order</Link>
       &nbsp; | &nbsp;
