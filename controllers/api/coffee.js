@@ -10,7 +10,8 @@ module.exports = {
 
 async function searchHot(req, res) {
     try{
-        const resultsHot = await fetch(`${SEARCH_URL}/hot`).then((res) => res.json());
+        const resultsHot = await fetch(`${SEARCH_URL}/hot`).then((res) => res.json())
+        console.log(resultsHot);
         res.json(resultsHot);
     } catch(e) {
         console.log(e);
@@ -18,11 +19,7 @@ async function searchHot(req, res) {
     }
 }
 async function searchCold(req, res) {
-    try{
-        const resultsCold = await fetch(`${SEARCH_URL}/cold`).then((res) => res.json());
-        res.json(resultsCold);
-    } catch(e) {
-        console.log(e);
-        res.json('Error occurred');
-    }
+    const resultsCold = await fetch(`${SEARCH_URL}/iced`)
+    .then((res) => 
+    res.json(resultsCold));
 }
