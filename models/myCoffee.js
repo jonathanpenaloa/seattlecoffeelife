@@ -1,12 +1,5 @@
-const Schema = required('mongoose');
+const mongoose = require('mongoose');
+const myCoffeeSchema = require('./myCoffeeSchema');
 
-const myCoffeeSchema = new Schema({
-    name: {type: String, require: true},
-    description: {String},
-    Ingredients: {String}
-}, {
-    timestamps: true
-});
 
-module.exports = myCoffeeSchema;
-
+module.exports = mongoose.model('myCoffee', myCoffeeSchema);

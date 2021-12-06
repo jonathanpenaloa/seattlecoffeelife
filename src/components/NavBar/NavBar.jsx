@@ -13,9 +13,9 @@ export default function NavBar(props) {
 
   return (
     <nav className="topnav">
-      <Link to="/CoffeeDrinks">Drik Menu</Link>
+      <Link to="/CoffeeDrinks">Drink Options</Link>
       &nbsp; | &nbsp;
-      <Link to="/NewDrink">New Order</Link>
+      <Link to="/NewDrink">Make a Drink</Link>
       &nbsp; | &nbsp;
       <span>Welcome, {props.user.name}</span>
       &nbsp; | &nbsp;
