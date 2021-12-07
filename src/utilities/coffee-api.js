@@ -9,3 +9,11 @@ export function searchHot() {
 export function searchCold() {
     return sendRequest(`${BASE_URL}/iced`, 'POST');
 }
+
+export function create(item) {
+    return sendRequest(`${BASE_URL}/items`, 'POST', item);
+}
+
+export function getAll() {
+    return sendRequest(`${BASE_URL}/myDrinks`);
+  }

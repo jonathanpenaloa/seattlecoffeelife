@@ -26,7 +26,6 @@ export default function CoffeeDrinkDetail({coldDrinks, hotDrinks}) {
             <p>{drink && drink.ingredients}</p>
             <p>{}</p>
             <p>{drink && drink.description}</p>
-            {/* <Link>All Drinks</Link> */}
         </div>
     );
 }

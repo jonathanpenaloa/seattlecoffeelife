@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import * as coffeeAPI from '../../utilities/coffee-api';
-export default function NewDrinkPage() {
+export default function NewDrinkPage({ addDrink }) {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -12,13 +11,12 @@ export default function NewDrinkPage() {
 function handleChange(evt) {
   const newFormData = {...formData, [evt.target.name]:evt.target.value};
   setFormData(newFormData);
-  console.log(newFormData);
 }
 
 function handleSubmmit(evt) {
   evt.preventDefault();
-  // const results = await coffeeAPI.create();
-  // addNewDrink()
+  addDrink(formData);
+  setFormData({ name: "", description: "", Ingredients: ""});
 }
 
   return (

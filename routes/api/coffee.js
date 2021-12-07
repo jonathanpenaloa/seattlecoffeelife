@@ -7,4 +7,10 @@ router.post('/hot', coffeeCtrl.searchHot);
 
 router.post('/iced', coffeeCtrl.searchCold);
 
+router.post('/items', coffeeCtrl.create);
+
+router.get('/myDrinks', coffeeCtrl.getAll);
+
+
+
 module.exports = router;

@@ -1,12 +1,28 @@
 const fetch = require('node-fetch');
+const myCoffee = require('../../models/mycoffee');
+const myCoffeeSchema = require('../../models/myCoffeeSchema');
 // const Coffee = require('../../models/');
 
 const SEARCH_URL ='https://api.sampleapis.com/coffee';
 
 module.exports = {
     searchHot,
-    searchCold
+    searchCold, 
+    create,
+    getAll,
 };
+
+async function getAll(req, res) {
+    const items = await myCoffee.find({})
+    res.json(items);
+}
+
+
+async function create(req, res) {
+    const item = await myCoffee(req.body);
+    item.save();
+    res.json(item);
+}
 
 async function searchHot(req, res) {
     await fetch(`${SEARCH_URL}/hot`)

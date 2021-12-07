@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CoffeeDrinkDetail from '../../components/CoffeeDrinkDetail/CoffeeDrinkDetail';
+
 // import { checkToken } from '../../utilities/users-service';
 // import { useParams } from "react-router-dom";
 import './CoffeeListPage.css';
@@ -10,7 +11,6 @@ export default function CoffeeListPage({hotDrinks, coldDrinks}) {
   const [showHot, setShowHot] = useState(false);
   const [showCold, setShowCold] = useState(false);
 
-  // const {id} = useParams();
   
   function handleShowHot(evt) {
     evt.preventDefault();
