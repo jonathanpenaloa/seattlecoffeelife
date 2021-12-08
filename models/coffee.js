@@ -1,6 +1,7 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const myCoffeeSchema = new Schema({
+const coffeeSchema = new Schema({
     name: {type: String, require: true},
     description: {type: String, require: true},
     Ingredients: {type: String, require: true}
@@ -8,5 +9,4 @@ const myCoffeeSchema = new Schema({
     timestamps: true
 });
 
-module.exports = myCoffeeSchema;
-
+module.exports = mongoose.model('myCoffee', coffeeSchema);

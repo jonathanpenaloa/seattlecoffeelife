@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const myCoffee = require('../../models/mycoffee');
+const Coffee = require('../../models/coffee');
 
 const SEARCH_URL ='https://api.sampleapis.com/coffee';
 
@@ -13,19 +13,19 @@ module.exports = {
 
 async function findOneAndDelete(req, res) {
     console.log('COntr',req.params.id);
-    await myCoffee.findByIdAndDelete(req.params.id);
-    const drinkList = await myCoffee.find({});
+    await Coffee.findByIdAndDelete(req.params.id);
+    const drinkList = await Coffee.find({});
     res.json(drinkList);
 }
 
 async function getAll(req, res) {
-    const items = await myCoffee.find({})
+    const items = await Coffee.find({})
     res.json(items);
 }
 
 
 async function create(req, res) {
-    const item = await myCoffee(req.body);
+    const item = await Coffee(req.body);
     item.save();
     res.json(item);
 }
