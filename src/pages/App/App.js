@@ -51,17 +51,23 @@ export default function App() {
     navigate('/MyDrinks');
   } 
 
+  async function deleteDrink(id) {
+    console.log(id);
+    const newListOfDrinks = await coffeeAPI.findOneAndDelete(id);
+    console.log("Delere on my page");
+    setAddDrinks(newListOfDrinks);
+}
+
   return (
     <main className="App">
       { user ?
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            {/* client-side route that renders the component instance if the path matches the url in the address bar */}
             <Route path="/NewDrink" element={<NewDrinkPage addDrink={addDrink}/>} />
             <Route path="/CoffeeDrinks" element={<CoffeeListPage hotDrinks={hotDrinks} coldDrinks={coldDrinks}/>} />
             <Route path="/CoffeeDrinks/:drinkId/:type" element={<CoffeeDrinkDetail hotDrinks={hotDrinks} coldDrinks={coldDrinks}/>} />
-            <Route path="/MyDrinks" element={<MyDrinkPage addDrinks={addDrinks}/>} />
+            <Route path="/MyDrinks" element={<MyDrinkPage deleteDrink={deleteDrink} addDrinks={addDrinks}/>} />
           </Routes>
         </>
         :

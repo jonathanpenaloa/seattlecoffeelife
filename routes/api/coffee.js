@@ -11,6 +11,7 @@ router.post('/items', coffeeCtrl.create);
 
 router.get('/myDrinks', coffeeCtrl.getAll);
 
+router.delete('/:id', coffeeCtrl.findOneAndDelete);
 
 
 module.exports = router;

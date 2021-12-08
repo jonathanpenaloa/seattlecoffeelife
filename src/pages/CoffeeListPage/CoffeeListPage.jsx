@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CoffeeDrinkDetail from '../../components/CoffeeDrinkDetail/CoffeeDrinkDetail';
 
-// import { checkToken } from '../../utilities/users-service';
-// import { useParams } from "react-router-dom";
 import './CoffeeListPage.css';
 
 export default function CoffeeListPage({hotDrinks, coldDrinks}) {
@@ -23,8 +20,7 @@ export default function CoffeeListPage({hotDrinks, coldDrinks}) {
 
   return (
     <main className="float-container">
-      <div className="float-child">
-        <h1>Choose Type</h1> 
+      <div className="float-child"> 
           <button type="submit"
           onClick={(evt) => handleShowHot(evt)}>See Hot Coffee Drinks</button>
           {showHot && hotDrinks.map(h => 
@@ -34,7 +30,6 @@ export default function CoffeeListPage({hotDrinks, coldDrinks}) {
           </Link>)}
       </div>
       <div className="float-child">
-          <h1>Choose Type</h1> 
           <button type="submit" 
           onClick={(evt) => handleShowCold(evt)}>See Iced Drinks</button>
           {showCold && coldDrinks.map(c => <Link to={`/CoffeeDrinks/${c.id}/cold`} key={c.title}> <p>{c.title}</p></Link>)}

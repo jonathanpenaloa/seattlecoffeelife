@@ -1,12 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router';
-// import { Link } from 'react';
 import './DrinkCard.css';
 
-export default function DrinkCard({drink}) {
-     
-    // const [editDrink, seteditDrink] = useState({});
-
+export default function DrinkCard({drink, deleteDrink }) {
 
     return (
         <div className="Card">
@@ -14,6 +9,7 @@ export default function DrinkCard({drink}) {
         <hr />
         <h2>The Ingredients: <br/>{drink.Ingredients}</h2>
         <h3>{drink.description}</h3>
+        <button onClick={() => deleteDrink(drink._id)}>Delete</button>
         </div>
     ); 
 }

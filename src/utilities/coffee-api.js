@@ -17,3 +17,7 @@ export function create(item) {
 export function getAll() {
     return sendRequest(`${BASE_URL}/myDrinks`);
   }
+
+export function findOneAndDelete(id) {
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
