@@ -1,13 +1,25 @@
 .float-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 3px solid #fff;
     padding: 20px;
 }
 
 .float-child {
-    width: 50%;
+    /* width: 50%; */
     float: left;
     padding: 20px;
     border: 2px solid red;
+    border-radius: 3rem;
 }  
+
+p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    border: 0.2rem solid rgb(22, 22, 21);
+    border-radius: 0.8rem;
+  }

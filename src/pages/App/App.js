@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewDrinkPage from '../NewDrinkPage/NewDrinkPage';
 import CoffeeListPage from '../CoffeeListPage/CoffeeListPage';
-import NavBar from '../../components/NavBar/NavBar';
 import * as coffeeAPI from '../../utilities/coffee-api';
 import CoffeeDrinkDetail from '../../components/CoffeeDrinkDetail/CoffeeDrinkDetail';
 import MyDrinkPage from '../MyDrinkPage/MyDrinkPage';
+import NavBar from '../../components/NavBar/NavBar';
+
 
 
 
@@ -21,6 +22,8 @@ export default function App() {
 
   //making a list of drinks 
   const [addDrinks, setAddDrinks] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(function() {
     async function getHotDrink() {
@@ -42,14 +45,10 @@ export default function App() {
     getMyDrinks();
   }, [])
 
-  console.log("Creat Func",addDrinks);
-
-
-
-  async function addDrink(post) {
-    const newItem = await coffeeAPI.create(post);
-    setAddDrinks(newItem);
-    console.log("What is in here?", newItem);
+  async function addDrink(newDrink) {
+    const newItem = await coffeeAPI.create(newDrink);
+    setAddDrinks([newItem, ...addDrinks]);
+    navigate('/MyDrinks');
   } 
 
   return (
@@ -62,7 +61,7 @@ export default function App() {
             <Route path="/NewDrink" element={<NewDrinkPage addDrink={addDrink}/>} />
             <Route path="/CoffeeDrinks" element={<CoffeeListPage hotDrinks={hotDrinks} coldDrinks={coldDrinks}/>} />
             <Route path="/CoffeeDrinks/:drinkId/:type" element={<CoffeeDrinkDetail hotDrinks={hotDrinks} coldDrinks={coldDrinks}/>} />
-            <Route path="/MyDrink" element={<MyDrinkPage addDrinks={addDrinks}/>} />
+            <Route path="/MyDrinks" element={<MyDrinkPage addDrinks={addDrinks}/>} />
           </Routes>
         </>
         :

@@ -37,7 +37,7 @@ export default function CoffeeListPage({hotDrinks, coldDrinks}) {
           <h1>Choose Type</h1> 
           <button type="submit" 
           onClick={(evt) => handleShowCold(evt)}>See Iced Drinks</button>
-          {showCold && coldDrinks.map(c => <Link to={`/CoffeeDrinks/${c.id}/cold`} key={c.title}> <div>{c.title}</div></Link>)}
+          {showCold && coldDrinks.map(c => <Link to={`/CoffeeDrinks/${c.id}/cold`} key={c.title}> <p>{c.title}</p></Link>)}
       </div>
     </main>
   );
