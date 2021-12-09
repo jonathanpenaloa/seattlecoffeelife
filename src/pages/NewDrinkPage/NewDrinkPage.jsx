@@ -47,7 +47,7 @@ function handleSubmmit(evt) {
       <br/>
       <button 
       type="submit" 
-      onClick={handleSubmmit}>Save you drink</button>
+      onClick={handleSubmmit}>Save your drink</button>
     </form>
     </div>
   );

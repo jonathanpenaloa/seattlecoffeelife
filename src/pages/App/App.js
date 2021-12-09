@@ -14,13 +14,10 @@ import NavBar from '../../components/NavBar/NavBar';
 
 
 export default function App() {
+
   const [user, setUser] = useState(getUser());
-  
-  //hits api for the results of hot and cold drinks
   const [hotDrinks, setHotDrinks] = useState([]);
   const [coldDrinks, setColdDrinks] = useState([]);
-
-  //making a list of drinks 
   const [addDrinks, setAddDrinks] = useState([]);
 
   const navigate = useNavigate();
@@ -39,7 +36,6 @@ export default function App() {
 
     async function getMyDrinks() {
       const myDrinks = await coffeeAPI.getAll();
-      console.log("HEllo",myDrinks);
       setAddDrinks(myDrinks);
     }
     getMyDrinks();
@@ -54,7 +50,6 @@ export default function App() {
   async function deleteDrink(id) {
     console.log(id);
     const newListOfDrinks = await coffeeAPI.findOneAndDelete(id);
-    console.log("Delere on my page");
     setAddDrinks(newListOfDrinks);
 }
 
@@ -66,6 +61,7 @@ export default function App() {
           <Routes>
             <Route path="/NewDrink" element={<NewDrinkPage addDrink={addDrink}/>} />
             <Route path="/CoffeeDrinks" element={<CoffeeListPage hotDrinks={hotDrinks} coldDrinks={coldDrinks}/>} />
+            <Route path="/" element={<CoffeeListPage hotDrinks={hotDrinks} coldDrinks={coldDrinks}/>} />
             <Route path="/CoffeeDrinks/:drinkId/:type" element={<CoffeeDrinkDetail hotDrinks={hotDrinks} coldDrinks={coldDrinks}/>} />
             <Route path="/MyDrinks" element={<MyDrinkPage deleteDrink={deleteDrink} addDrinks={addDrinks}/>} />
           </Routes>

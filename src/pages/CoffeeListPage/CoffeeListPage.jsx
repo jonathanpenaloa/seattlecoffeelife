@@ -8,7 +8,6 @@ export default function CoffeeListPage({hotDrinks, coldDrinks}) {
   const [showHot, setShowHot] = useState(false);
   const [showCold, setShowCold] = useState(false);
 
-  
   function handleShowHot(evt) {
     evt.preventDefault();
     setShowHot(!showHot)
@@ -22,17 +21,25 @@ export default function CoffeeListPage({hotDrinks, coldDrinks}) {
     <main className="float-container">
       <div className="float-child"> 
           <button type="submit"
-          onClick={(evt) => handleShowHot(evt)}>See Hot Coffee Drinks</button>
+          onClick={(evt) => handleShowHot(evt)}>Hot Coffee Drinks</button>
           {showHot && hotDrinks.map(h => 
           <Link to={`/CoffeeDrinks/${h.id}/hot`} 
           key={h.title}> 
-          <p>{h.title}</p>
+          <div className="drink-card">
+              <p>{h.title}</p>
+          </div>
           </Link>)}
       </div>
       <div className="float-child">
           <button type="submit" 
-          onClick={(evt) => handleShowCold(evt)}>See Iced Drinks</button>
-          {showCold && coldDrinks.map(c => <Link to={`/CoffeeDrinks/${c.id}/cold`} key={c.title}> <p>{c.title}</p></Link>)}
+          onClick={(evt) => handleShowCold(evt)}>Iced Drinks</button>
+          {showCold && coldDrinks.map(c => 
+          <Link to={`/CoffeeDrinks/${c.id}/cold`} 
+          key={c.title}> 
+          <div className="drink-card">
+          <p>{c.title}</p>
+          </div>
+          </Link>)}
       </div>
     </main>
   );

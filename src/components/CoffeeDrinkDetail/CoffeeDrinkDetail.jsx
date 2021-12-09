@@ -23,8 +23,7 @@ export default function CoffeeDrinkDetail({coldDrinks, hotDrinks}) {
         <div>
             <h1>{drink && drink.title}</h1>
             <h2>Details:</h2>
-            <p>{drink && drink.ingredients}</p>
-            <p>{}</p>
+            <p>{drink && drink.ingredients.map((i, idx) => idx === drink.ingredients.length - 1 ? i : `${i}, `)}</p>
             <p>{drink && drink.description}</p>
         </div>
     );

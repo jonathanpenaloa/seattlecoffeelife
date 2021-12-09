@@ -14,13 +14,13 @@ export default function NavBar(props) {
   return (
     <nav className="topnav">
       <Link to="/CoffeeDrinks">Drink Options</Link>
-      &nbsp; | &nbsp;
+      &nbsp; &nbsp;
       <Link to="/NewDrink">New Drink</Link>
-      &nbsp; | &nbsp;
+      &nbsp; &nbsp;
       <Link to="/MyDrinks">My Drinks</Link>
-      &nbsp; | &nbsp;
-      <span>Welcome, {props.user.name}</span>
-      &nbsp; | &nbsp;
+      &nbsp;
+      <span>Welcome, {props.user.name}!</span>
+      &nbsp; &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
   );

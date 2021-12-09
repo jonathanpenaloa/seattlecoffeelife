@@ -2,23 +2,38 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 3px solid #fff;
     padding: 20px;
 }
 
 .float-child {
     float: left;
     padding: 20px;
-    border: 2px solid red;
+    border: 2px solid white;
     border-radius: 3rem;
 }  
 
-p {
+.drink-card {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0.5rem;
     padding: 0.2rem 0.6rem;
-    border: 0.2rem solid rgb(22, 22, 21);
+    border: 0.1rem solid white;
     border-radius: 0.8rem;
+    width: 100%;
   }
+
+a {
+    text-decoration: none; 
+    justify-content: center;
+    color: white;
+    display: flex;
+}
+
+body {
+    background: url(https://i.imgur.com/s52sYbb.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

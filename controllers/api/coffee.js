@@ -23,7 +23,6 @@ async function getAll(req, res) {
     res.json(items);
 }
 
-
 async function create(req, res) {
     const item = await Coffee(req.body);
     item.save();
