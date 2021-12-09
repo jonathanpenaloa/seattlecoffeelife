@@ -21,9 +21,8 @@ function handleSubmmit(evt) {
 
   return (
     <div>
-    <h1>NewDrinkPage</h1>
+    <h1>Create a new Drink</h1>
     <form action="submit">
-
       <label>Name</label>
         <input 
         value={formData.name}

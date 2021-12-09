@@ -1,6 +1,6 @@
 .topnav {
     overflow: hidden;
-  }
+}
 
 .topnav a, span {
     float: left;
@@ -9,16 +9,16 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 5vmin;
-  }
+}
   
 .topnav a:hover {
     background-color: #ddd;
     color: black;
-  }
+}
   
 .topnav a.active {
     background-color: #ddd;
-  }
+}
 
 .u {
     color: white;
