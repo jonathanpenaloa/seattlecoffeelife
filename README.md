@@ -25,10 +25,10 @@
 - #### N odeJs
 - #### MongoBD
 
-[link to the Workout App](https://work-out-app-sei.herokuapp.com)
+[link to the Seattle Coffee Life](https://seattlecoffeelife.herokuapp.com/CoffeeDrinks)
 
 
-[link to the trello](https://trello.com/b/1ft0qKqF/work-out-app)
+[link to the trello](https://trello.com/b/tpC7t911/seattlecoffeelife)
 
 ## Future Enhancements:
 
@@ -38,4 +38,4 @@
 
 - #### Add an Admin feature to the app.
 
-- #### Let user share recepies without other users. 
+- #### Seed Ingredients to selected from when making app
