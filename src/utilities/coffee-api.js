@@ -1,6 +1,6 @@
 import sendRequest from './send-request';
 
-const BASE_URL ='/api/coffee';
+const BASE_URL ='/api/coffee'; 
 
 export function searchHot() {
     return sendRequest(`${BASE_URL}/hot`, 'POST');

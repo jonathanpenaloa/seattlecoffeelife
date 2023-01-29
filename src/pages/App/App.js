@@ -11,8 +11,6 @@ import MyDrinkPage from '../MyDrinkPage/MyDrinkPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 
-
-
 export default function App() {
 
   const [user, setUser] = useState(getUser());
@@ -40,6 +38,7 @@ export default function App() {
     }
     getMyDrinks();
   }, [])
+  
 
   async function addDrink(newDrink) {
     const newItem = await coffeeAPI.create(newDrink);

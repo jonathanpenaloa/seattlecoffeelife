@@ -12,7 +12,6 @@ module.exports = {
 };
 
 async function findOneAndDelete(req, res) {
-    console.log('COntr',req.params.id);
     await Coffee.findByIdAndDelete(req.params.id);
     const drinkList = await Coffee.find({});
     res.json(drinkList);

@@ -17,7 +17,7 @@ export default function CoffeeDrinkDetail({coldDrinks, hotDrinks}) {
         if(type === 'cold') {
             setDrink(coldDrinks.find(c => c.id === drinkId))
         } 
-    },[]);
+    },[type, hotDrinks, drinkId, coldDrinks]);
 
     return (
         <div>
